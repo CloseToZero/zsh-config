@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   vi-mode
+  autojump # You need to install external tool autojump manually.
   sudo
   extract
   archlinux
