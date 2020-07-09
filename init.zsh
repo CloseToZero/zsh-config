@@ -148,11 +148,9 @@ add_existed_dir_to_path "$HOME/.local/bin"
 add_existed_dir_to_path "$HOME/.yarn/bin"
 
 # .my_zshrc for per computer configuration.
-if [ -f "$HOME/.my_zshrc" ]; then
-  source "$HOME/.my_zshrc"
-fi
+[ -f "$HOME/.my_zshrc" ] && source "$HOME/.my_zshrc"
 
 # .rd_alias: book reading aliases.
-if [ -f "$HOME/.rd_alias" ]; then
-  source "$HOME/.rd_alias"
-fi
+[ -f "$HOME/.rd_alias" ] && source "$HOME/.rd_alias"
+
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
