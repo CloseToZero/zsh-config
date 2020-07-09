@@ -8,7 +8,7 @@ First, you need to install Oh My Zsh, then remove the auto-generated
 Finally, run following commands.
 
 ``` shell
-git clone <repo-url> "$HOME/.config/zsh"
+git clone --recurse-submodules <repo-url> "$HOME/.config/zsh"
 cd "$HOME/.config/zsh"
 ./install.sh
 ```
