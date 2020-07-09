@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   vi-mode
+  extract
 )
 
 source "$ZSH/oh-my-zsh.sh"
