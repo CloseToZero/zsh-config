@@ -98,6 +98,27 @@ source "$ZSH/oh-my-zsh.sh"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+add_existed_dir_to_path() {
+  if [ -d "$1" ]
+  then
+    if [[ $PATH =~ "$1" ]]; then
+      return 0
+    fi
+
+    if [ "$2" = "prepend" ]; then
+      export PATH="$1:$PATH"
+    else
+      export PATH="$PATH:$1"
+    fi
+  fi
+  return 0
+}
+
+add_existed_dir_to_path "$HOME/bin"
+add_existed_dir_to_path "$HOME/.roswell/bin"
+add_existed_dir_to_path "$HOME/.local/bin"
+add_existed_dir_to_path "$HOME/.yarn/bin"
+
 # .my_zshrc for per computer configuration
 if [ -f "$HOME/.my_zshrc" ]; then
   source "$HOME/.my_zshrc"
