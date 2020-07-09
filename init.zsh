@@ -74,6 +74,7 @@ plugins=(
   sudo
   extract
   archlinux
+  node
 )
 
 source "$ZSH/oh-my-zsh.sh"
