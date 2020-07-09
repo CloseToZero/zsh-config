@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   vi-mode
+  sudo
   extract
   archlinux
 )
