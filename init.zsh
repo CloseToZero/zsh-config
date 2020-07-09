@@ -72,6 +72,7 @@ plugins=(
   git
   vi-mode
   extract
+  archlinux
 )
 
 source "$ZSH/oh-my-zsh.sh"
