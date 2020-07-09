@@ -98,6 +98,11 @@ source "$ZSH/oh-my-zsh.sh"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# .my_zshrc for per computer configuration
+if [ -f "$HOME/.my_zshrc" ]; then
+  source "$HOME/.my_zshrc"
+fi
+
 # .rd_alias: book reading aliases
 if [ -f "$HOME/.rd_alias" ]; then
   source "$HOME/.rd_alias"
