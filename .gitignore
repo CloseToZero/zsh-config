@@ -1,1 +1,3 @@
 /init-wrapper.zsh
+/installed-plugins/*
+!/installed-plugins/.keep

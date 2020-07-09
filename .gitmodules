@@ -1,0 +1,3 @@
+[submodule "plugin-manager/zplug"]
+	path = plugin-manager/zplug
+	url = https://github.com/zplug/zplug.git

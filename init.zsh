@@ -127,6 +127,23 @@ alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="so
 alias unsetp='unset http_proxy; unset https_proxy'
 alias xo='xdg-open'
 
+# Plugin manager
+export ZPLUG_HOME="$ZSH_CONFIG_DIR/installed-plugins"
+source "$ZSH_CONFIG_DIR/plugin-manager/zplug/init.zsh"
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed.
+if ! zplug check --verbose; then
+  printf "[zplug] Install plugins? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+# Then, source plugins and add commands to PATH.
+zplug load --verbose
+
 add_existed_dir_to_path() {
   if [ -d "$1" ]
   then
