@@ -68,7 +68,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  vi-mode
+)
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -88,6 +91,22 @@ source "$ZSH/oh-my-zsh.sh"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Create a zkbd compatible hash. To add other keys to this hash, see: man 5
+# terminfo.
+typeset -g -A key
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+
+# Bind some extra keys in vi-mode.
+# Home/End: beginning/end of line.
+for mode in viins vicmd
+do
+  bindkey -M $mode "${key[Home]}" beginning-of-line
+  bindkey -M $mode "${key[End]}" end-of-line
+done
+# kj: escape from insert mode.
+bindkey -M viins kj vi-cmd-mode
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -125,12 +144,12 @@ add_existed_dir_to_path "$HOME/.roswell/bin"
 add_existed_dir_to_path "$HOME/.local/bin"
 add_existed_dir_to_path "$HOME/.yarn/bin"
 
-# .my_zshrc for per computer configuration
+# .my_zshrc for per computer configuration.
 if [ -f "$HOME/.my_zshrc" ]; then
   source "$HOME/.my_zshrc"
 fi
 
-# .rd_alias: book reading aliases
+# .rd_alias: book reading aliases.
 if [ -f "$HOME/.rd_alias" ]; then
   source "$HOME/.rd_alias"
 fi
