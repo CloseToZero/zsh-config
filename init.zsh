@@ -143,7 +143,7 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to PATH.
-zplug load --verbose
+zplug load
 
 add_existed_dir_to_path() {
   if [ -d "$1" ]
