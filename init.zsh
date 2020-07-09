@@ -97,3 +97,8 @@ source "$ZSH/oh-my-zsh.sh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# .rd_alias: book reading aliases
+if [ -f "$HOME/.rd_alias" ]; then
+  source "$HOME/.rd_alias"
+fi
