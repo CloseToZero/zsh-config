@@ -110,8 +110,8 @@ do
   bindkey -M $mode "${key[Home]}" beginning-of-line
   bindkey -M $mode "${key[End]}" end-of-line
 done
-# kj: escape from insert mode.
-bindkey -M viins kj vi-cmd-mode
+# jj: escape from insert mode.
+bindkey -M viins jj vi-cmd-mode
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
