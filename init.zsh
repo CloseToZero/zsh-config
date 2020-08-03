@@ -112,6 +112,8 @@ do
 done
 # jj: escape from insert mode.
 bindkey -M viins jj vi-cmd-mode
+bindkey -M viins '^J' down-history
+bindkey -M viins '^K' up-history
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
