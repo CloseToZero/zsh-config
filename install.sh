@@ -13,7 +13,7 @@ EOF
 
 if [ -f "$INSTALL" ]; then
   echo "Config $INSTALL already exists, backup it as $BACKUP"
-  cp "$INSTALL" "$BCAKUP"
+  cp "$INSTALL" "$BACKUP"
 fi
 
 echo "Install to $INSTALL"
