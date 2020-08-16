@@ -167,6 +167,7 @@ add_existed_dir_to_path "$HOME/bin"
 add_existed_dir_to_path "$HOME/.roswell/bin"
 add_existed_dir_to_path "$HOME/.local/bin"
 add_existed_dir_to_path "$HOME/.yarn/bin"
+add_existed_dir_to_path "$HOME/my-scripts"
 
 # .my_zshrc for per computer configuration.
 [ -f "$HOME/.my_zshrc" ] && source "$HOME/.my_zshrc"
