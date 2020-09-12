@@ -134,6 +134,7 @@ alias xo='xdg-open'
 export ZPLUG_HOME="$ZSH_CONFIG_DIR/installed-plugins"
 source "$ZSH_CONFIG_DIR/plugin-manager/zplug/init.zsh"
 
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed.
@@ -146,6 +147,9 @@ fi
 
 # Then, source plugins and add commands to PATH.
 zplug load
+
+# ctrl+space to accept the current suggestion
+bindkey '^ ' autosuggest-accept
 
 add_existed_dir_to_path() {
   if [ -d "$1" ]
