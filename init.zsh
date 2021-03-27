@@ -136,10 +136,10 @@ zplug load
 # jj: escape from insert mode.
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 # M-n/M-p: down/up history in insert/normal modes
-for mode in vicmd viins
+for keymap in vicmd viins
 do
-  zvm_bindkey $mode '^[n' down-history
-  zvm_bindkey $mode '^[p' up-history
+  zvm_bindkey $keymap '^[n' down-history
+  zvm_bindkey $keymap '^[p' up-history
 done
 
 # ctrl+space to accept the current suggestion
