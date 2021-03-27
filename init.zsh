@@ -70,7 +70,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  vi-mode
   autojump # You need to install external tool autojump manually.
   sudo
   extract
@@ -99,27 +98,6 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Create a zkbd compatible hash. To add other keys to this hash, see: man 5
-# terminfo.
-typeset -g -A key
-key[Home]="${terminfo[khome]}"
-key[End]="${terminfo[kend]}"
-
-# Bind some extra keys in vi-mode.
-# Home/End: beginning/end of line.
-for mode in viins vicmd
-do
-  bindkey -M $mode "${key[Home]}" beginning-of-line
-  bindkey -M $mode "${key[End]}" end-of-line
-done
-# jj: escape from insert mode.
-bindkey -M viins jj vi-cmd-mode
-# M-n/M-p: down/up history
-bindkey -M vicmd '^[n' down-history
-bindkey -M vicmd '^[p' up-history
-bindkey -M viins '^[n' down-history
-bindkey -M viins '^[p' up-history
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -141,6 +119,7 @@ source "$ZSH_CONFIG_DIR/plugin-manager/zplug/init.zsh"
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "jeffreytse/zsh-vi-mode"
 
 # Install plugins if there are plugins that have not been installed.
 if ! zplug check --verbose; then
@@ -152,6 +131,16 @@ fi
 
 # Then, source plugins and add commands to PATH.
 zplug load
+
+# Config of zsh-vi-mode
+# jj: escape from insert mode.
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+# M-n/M-p: down/up history in insert/normal modes
+for mode in vicmd viins
+do
+  zvm_bindkey $mode '^[n' down-history
+  zvm_bindkey $mode '^[p' up-history
+done
 
 # ctrl+space to accept the current suggestion
 bindkey '^ ' autosuggest-accept
