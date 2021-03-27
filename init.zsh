@@ -173,4 +173,4 @@ add_existed_dir_to_path "$HOME/my-scripts"
 # .rd_alias: book reading aliases.
 [ -f "$HOME/.rd_alias" ] && source "$HOME/.rd_alias"
 
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+zvm_after_init_commands+=('[ -f "$HOME/.fzf.zsh"  ] && source "$HOME/.fzf.zsh"')
