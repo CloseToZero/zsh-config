@@ -143,7 +143,7 @@ do
 done
 
 # ctrl+space to accept the current suggestion
-bindkey '^ ' autosuggest-accept
+zvm_bindkey viins '^ ' autosuggest-accept
 
 add_existed_dir_to_path() {
   if [ -d "$1" ]
