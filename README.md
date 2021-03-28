@@ -2,7 +2,7 @@
 
 ## Installation
 
-First, you need to install (Oh My Zsh)[https://github.com/ohmyzsh/ohmyzsh], then remove the auto-generated
+First, you need to install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), then remove the auto-generated
 "$HOME/.zshrc".
 
 Finally, run following commands.
@@ -15,4 +15,4 @@ cd "$HOME/.config/zsh"
 
 ## TODOs
 
-* Remove the dependency to Oh My Zsh
+* Remove the dependency to Oh My Zsh.
