@@ -12,6 +12,10 @@ source '$CONFIG'
 EOF
 
 if [ -f "$INSTALL" ]; then
+  if [ -f "$BACKUP" ]; then
+    echo "Try to backup $INSTALL as $BACKUP, but $BACKUP already exists"
+    exit 1
+  fi
   echo "Config $INSTALL already exists, backup it as $BACKUP"
   cp "$INSTALL" "$BACKUP"
 fi
