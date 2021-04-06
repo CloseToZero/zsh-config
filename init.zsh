@@ -10,7 +10,7 @@ export HISTSIZE=50000
 # Enhance the experience of completion
 autoload -U compinit
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z-_}={A-Za-z_-}'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
