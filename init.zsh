@@ -5,6 +5,13 @@ export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=50000
 export HISTSIZE=50000
 
+# Enhance the experience of completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
 alias shut='shutdown -h now'
 alias sethp='export http_proxy="http://127.0.0.1:1080"; export https_proxy="http://127.0.0.1:1080"'
 alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="socks5://127.0.0.1:1080"'
@@ -42,6 +49,12 @@ done
 
 # ctrl+space to accept the current suggestion
 zvm_bindkey viins '^ ' autosuggest-accept
+
+# Use vi keys to navigate between menu items
+zvm_bindkey menuselect 'j' vi-down-line-or-history
+zvm_bindkey menuselect 'k' vi-up-line-or-history
+zvm_bindkey menuselect 'h' vi-backward-char
+zvm_bindkey menuselect 'l' vi-forward-char
 
 add_existed_dir_to_path() {
   if [ -d "$1" ]
