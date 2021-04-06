@@ -1,6 +1,10 @@
 export TERM='xterm-256color'
 export LANG=en_US.UTF-8
 
+export HISTFILE="$HOME/.zsh_history"
+export SAVEHIST=50000
+export HISTSIZE=50000
+
 alias shut='shutdown -h now'
 alias sethp='export http_proxy="http://127.0.0.1:1080"; export https_proxy="http://127.0.0.1:1080"'
 alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="socks5://127.0.0.1:1080"'
