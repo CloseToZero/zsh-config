@@ -27,10 +27,14 @@ alias unsetp='unset http_proxy; unset https_proxy'
 alias xo='xdg-open'
 
 zinit light zsh-users/zsh-autosuggestions
+
 zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
+
+zinit ice atclone"./install --bin" as"program" pick"bin/fzf"
+zinit light junegunn/fzf
 
 # Config of zsh-vi-mode
 # jj: escape from insert mode.
@@ -73,10 +77,15 @@ add_existed_dir_to_path "$HOME/.local/bin"
 add_existed_dir_to_path "$HOME/.yarn/bin"
 add_existed_dir_to_path "$HOME/my-scripts"
 
+function my_init_fzf() {
+  local script="$ZINIT[HOME_DIR]/plugins/junegunn---fzf/shell/key-bindings.zsh"
+  [ -f "$script" ] && source "$script"
+}
+
+zvm_after_init_commands+=(my_init_fzf)
+
 # .my_zshrc for per computer configuration.
 [ -f "$HOME/.my_zshrc" ] && source "$HOME/.my_zshrc"
 
 # .rd_alias: book reading aliases.
 [ -f "$HOME/.rd_alias" ] && source "$HOME/.rd_alias"
-
-zvm_after_init_commands+=('[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"')
