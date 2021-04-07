@@ -7,6 +7,11 @@ export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=50000
 export HISTSIZE=50000
 
+# Plugin manager
+declare -A ZINIT
+ZINIT[HOME_DIR]="$ZSH_CONFIG_DIR/.cache/zinit"
+source "$ZSH_CONFIG_DIR/plugin-manager/zinit/zinit.zsh"
+
 # Enhance the experience of completion
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -21,24 +26,11 @@ alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="so
 alias unsetp='unset http_proxy; unset https_proxy'
 alias xo='xdg-open'
 
-# Plugin manager
-export ZPLUG_HOME="$ZSH_CONFIG_DIR/installed-plugins"
-source "$ZSH_CONFIG_DIR/plugin-manager/zplug/init.zsh"
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
 
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "jeffreytse/zsh-vi-mode"
-
-# Install plugins if there are plugins that have not been installed.
-if ! zplug check --verbose; then
-  printf "[zplug] Install plugins? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-# Then, source plugins and add commands to PATH.
-zplug load
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 # Config of zsh-vi-mode
 # jj: escape from insert mode.
