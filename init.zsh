@@ -60,8 +60,7 @@ zvm_bindkey menuselect 'h' vi-backward-char
 zvm_bindkey menuselect 'l' vi-forward-char
 
 add_existed_dir_to_path() {
-  if [ -d "$1" ]
-  then
+  if [ -d "$1" ]; then
     if [[ $PATH =~ "$1" ]]; then
       return 0
     fi
