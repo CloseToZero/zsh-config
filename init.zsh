@@ -94,6 +94,3 @@ zvm_after_init_commands+=(my_init_fzf)
 
 # .my_zshrc for per computer configuration.
 [ -f "$HOME/.my_zshrc" ] && source "$HOME/.my_zshrc"
-
-# .rd_alias: book reading aliases.
-[ -f "$HOME/.rd_alias" ] && source "$HOME/.rd_alias"
