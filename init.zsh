@@ -24,6 +24,11 @@ alias shut='shutdown -h now'
 alias sethp='export http_proxy="http://127.0.0.1:1080"; export https_proxy="http://127.0.0.1:1080"'
 alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="socks5://127.0.0.1:1080"'
 alias unsetp='unset http_proxy; unset https_proxy'
+alias unsethp=unsetp
+alias unsetsp=unsetp
+alias echop='echo http_proxy: $http_proxy; echo https_proxy: $https_proxy'
+alias echohp=echop
+alias echosp=echop
 alias xo='xdg-open'
 alias ls='ls --color=auto'
 alias ll='ls -al'
