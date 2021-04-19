@@ -34,6 +34,11 @@ alias ls='ls --color=auto'
 alias ll='ls -al'
 alias ec='emacsclient -n'
 
+if which pacman > /dev/null; then
+  alias pacin='sudo pacman -S'
+  alias pacupg='pacman -Syyu'
+fi
+
 zinit light agkozak/agkozak-zsh-prompt
 
 zinit light zsh-users/zsh-autosuggestions
