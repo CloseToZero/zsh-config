@@ -32,6 +32,7 @@ alias echosp=echop
 alias xo='xdg-open'
 alias ls='ls --color=auto'
 alias ll='ls -al'
+alias ec='emacsclient -n'
 
 zinit light agkozak/agkozak-zsh-prompt
 
