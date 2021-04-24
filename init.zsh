@@ -6,6 +6,7 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=50000
 export HISTSIZE=50000
+setopt histignorealldups
 
 # Plugin manager
 declare -A ZINIT
