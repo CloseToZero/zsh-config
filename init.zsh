@@ -21,7 +21,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-alias shut='shutdown -h now'
+alias shut='sudo shutdown -h now'
 alias sethp='export http_proxy="http://127.0.0.1:1080"; export https_proxy="http://127.0.0.1:1080"'
 alias setsp='export http_proxy="socks5://127.0.0.1:1080"; export https_proxy="socks5://127.0.0.1:1080"'
 alias unsetp='unset http_proxy; unset https_proxy'
