@@ -57,6 +57,8 @@ zinit light jeffreytse/zsh-vi-mode
 zinit ice atclone"./install --bin" as"program" pick"bin/fzf"
 zinit light junegunn/fzf
 
+zinit snippet OMZ::plugins/autojump/autojump.plugin.zsh
+
 # Config of zsh-vi-mode
 # jj: escape from insert mode.
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
