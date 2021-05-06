@@ -30,11 +30,12 @@ alias unsetsp=unsetp
 alias echop='echo http_proxy: $http_proxy; echo https_proxy: $https_proxy'
 alias echohp=echop
 alias echosp=echop
-alias xo='xdg-open'
-if [[ `uname` == 'Darwin' ]]; then
+if [[ "$OSTYPE" == darwin* ]]; then
   alias ls='ls -G'
+  alias xo='open'
 else
   alias ls='ls --color=auto'
+  alias xo='xdg-open'
 fi
 alias ll='ls -al'
 alias ec='emacsclient -n'
