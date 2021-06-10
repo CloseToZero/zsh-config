@@ -109,5 +109,7 @@ function my_init_fzf() {
 
 zvm_after_init_commands+=(my_init_fzf)
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
 # .my_zshrc for per computer configuration.
 [ -f "$HOME/.my_zshrc" ] && source "$HOME/.my_zshrc"
