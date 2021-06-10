@@ -40,7 +40,7 @@ fi
 alias ll='ls -al'
 alias ec='emacsclient -n'
 
-if which pacman > /dev/null; then
+if which pacman > /dev/null 2>&1; then
   alias pacin='sudo pacman -S'
   alias pacupg='pacman -Syyu'
 fi
